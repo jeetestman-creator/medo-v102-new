@@ -1,4 +1,4 @@
-import { CheckCircle, XCircle, Filter, Search, Calendar, User, TrendingUp, DollarSign } from 'lucide-react';
+import { Filter, Search, Calendar, User } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';

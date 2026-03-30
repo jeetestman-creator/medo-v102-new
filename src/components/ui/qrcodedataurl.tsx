@@ -12,6 +12,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+// @ts-ignore
 import QRCode from 'qrcode';
 
 interface QRCodeDataUrlProps {

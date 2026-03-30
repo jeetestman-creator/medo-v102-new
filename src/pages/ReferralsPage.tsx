@@ -14,7 +14,6 @@ export default function ReferralsPage() {
   const { user, profile } = useAuth();
   const [stats, setStats] = useState<ReferralStats | null>(null);
   const [commissions, setCommissions] = useState<ReferralCommission[]>([]);
-  const [setLoading] = useState(true);
 
   useEffect(() => {
     loadData();
@@ -22,7 +21,6 @@ export default function ReferralsPage() {
 
   const loadData = async () => {
     if (!user) return;
-    setLoading(true);
     try {
       const [statsData, commissionsData] = await Promise.all([
         getReferralStats(user.id),
@@ -32,8 +30,6 @@ export default function ReferralsPage() {
       if (commissionsData) setCommissions(commissionsData);
     } catch (error) {
       console.error('Failed to load referral data:', error);
-    } finally {
-      setLoading(false);
     }
   };
 

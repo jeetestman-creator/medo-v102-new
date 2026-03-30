@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Timer, Clock, Zap } from 'lucide-react';
+import { Clock, Zap } from 'lucide-react';
 import { supabase } from '@/db/supabase';
 import { useAuth } from '@/contexts/AuthContext';
 import { cn } from '@/lib/utils';

@@ -27,7 +27,7 @@ export default function DepositPage() {
   const [network, setNetwork] = useState<NetworkType>('BEP20');
   const [transactionHash, setTransactionHash] = useState('');
   const [loading, setLoading] = useState(false);
-  const [loadingAddresses, setLoadingAddresses] = useState(true);
+  const [, setLoadingAddresses] = useState(true);
   const [copied, setCopied] = useState(false);
   const [tutorials, setTutorials] = useState<Tutorial[]>([]);
   const [totalDeposits, setTotalDeposits] = useState(0);

@@ -1,4 +1,4 @@
-import { Activity, Anchor, BarChart3, CloudUpload, DollarSign, Globe, Image, Layout, Loader2, Lock, Mail, Palette, Save, Search, Settings, Shield, Terminal, Type, Users, Wallet } from 'lucide-react';
+import { Activity, Anchor, BarChart3, DollarSign, Globe, Image, Loader2, Mail, Palette, Save, Search, Terminal, Users, Wallet } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -161,7 +161,7 @@ export default function AdminSettingsPage() {
 
     setTestingEmail(true);
     try {
-      const { data, error } = await supabase.functions.invoke('test-email', {
+      const { error } = await supabase.functions.invoke('test-email', {
         body: { email: testRecipient }
       });
 

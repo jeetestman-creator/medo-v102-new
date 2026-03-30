@@ -718,6 +718,17 @@ ON notifications FOR UPDATE
 USING (auth.uid() = user_id);
 ```
 
+### Enabling Google OAuth
+
+To enable Google login, you must configure it in your Supabase Dashboard:
+
+1. Go to **Authentication** > **Providers**.
+2. Find **Google** and toggle it **ON**.
+3. You will need to provide a **Client ID** and **Client Secret** from the [Google Cloud Console](https://console.cloud.google.com/).
+4. Add the **Redirect URL** provided by Supabase to your Google Cloud Project's "Authorized redirect URIs".
+
+If Google is not enabled, users will receive a message suggesting they use Email/Password instead.
+
 3. **Admins can create notifications**
 ```sql
 CREATE POLICY "Admins can create notifications"

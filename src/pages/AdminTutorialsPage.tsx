@@ -1,4 +1,4 @@
-import { Plus, Trash2, Edit, Upload } from 'lucide-react';
+import { Plus, Trash2, Edit } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';

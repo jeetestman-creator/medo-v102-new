@@ -11,7 +11,6 @@ export default function WalletsPage() {
   const { user } = useAuth();
   const [balances, setBalances] = useState<WalletBalances | null>(null);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [setLoading] = useState(true);
 
   useEffect(() => {
     loadData();
@@ -19,7 +18,6 @@ export default function WalletsPage() {
 
   const loadData = async () => {
     if (!user) return;
-    setLoading(true);
     try {
       const [balancesData, transactionsData] = await Promise.all([
         getWalletBalances(user.id),
@@ -29,8 +27,6 @@ export default function WalletsPage() {
       if (transactionsData) setTransactions(transactionsData);
     } catch (error) {
       console.error('Failed to load wallet data:', error);
-    } finally {
-      setLoading(false);
     }
   };
 

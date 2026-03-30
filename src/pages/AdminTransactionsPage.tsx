@@ -1,8 +1,8 @@
-import { DollarSign, Search, Download, Filter, Calendar, User, TrendingUp, ArrowDownCircle, ArrowUpCircle } from 'lucide-react';
+import { DollarSign, Search, Download, Filter, TrendingUp, ArrowDownCircle, ArrowUpCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -16,7 +16,7 @@ import { exportTransactionsToExcel } from '@/lib/excel-export';
 
 export default function AdminTransactionsPage() {
   const [transactions, setTransactions] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('all');
 

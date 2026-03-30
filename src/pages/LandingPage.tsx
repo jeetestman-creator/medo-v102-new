@@ -1,4 +1,4 @@
-import { ArrowRight, Eye, Shield, Target, TrendingUp, Users, Zap, Award, Globe, Lock, BarChart3, ChevronRight, Loader2 } from 'lucide-react';
+import { ArrowRight, Shield, TrendingUp, Users, Zap, Award, Globe, BarChart3, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/button';
@@ -18,19 +18,11 @@ const iconMap: Record<string, any> = {
 };
 
 export default function LandingPage() {
-  const [scrolled, setScrolled] = useState(false);
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState<any[]>([]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    
     fetchSettings();
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const fetchSettings = async () => {

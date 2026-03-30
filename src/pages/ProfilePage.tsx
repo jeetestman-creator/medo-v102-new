@@ -1,4 +1,4 @@
-import { CheckCircle, Clock, Shield, Upload, User, XCircle, Download, Power, MapPin, Phone, Mail, Fingerprint, FileText, Wallet } from 'lucide-react';
+import { CheckCircle, Shield, Upload, User, Download, MapPin, Phone, Fingerprint, FileText, Wallet } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';

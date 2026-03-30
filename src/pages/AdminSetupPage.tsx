@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Shield, CheckCircle, UserPlus, Key } from 'lucide-react';
+import { Shield, CheckCircle } from 'lucide-react';
 
 export default function AdminSetupPage() {
   return (

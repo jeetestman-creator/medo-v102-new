@@ -1,4 +1,4 @@
-import { ArrowLeft, DollarSign, TrendingUp, Wallet, FileText, User as UserIcon, Phone, Globe, Mail, Calendar, Shield, Power, Edit2, Check, X, Users } from 'lucide-react';
+import { ArrowLeft, DollarSign, TrendingUp, Wallet, FileText, User as UserIcon, Phone, Globe, Mail, Calendar, Shield, Power, Edit2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'sonner';

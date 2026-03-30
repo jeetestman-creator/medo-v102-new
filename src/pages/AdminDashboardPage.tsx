@@ -1,7 +1,7 @@
 import { Clock, DollarSign, TrendingUp, Users, Ticket } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { supabase } from '@/db/supabase';
 
 export default function AdminDashboardPage() {

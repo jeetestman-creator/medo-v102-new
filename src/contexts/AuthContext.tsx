@@ -122,7 +122,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        if (error.message.includes('provider is not enabled') || error.message.includes('Unsupported provider')) {
+          throw new Error('Email login is not currently enabled for this platform. Please contact support.');
+        }
+        throw error;
+      }
       return { error: null };
     } catch (error) {
       return { error: error as Error };
@@ -166,7 +171,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        if (error.message.includes('provider is not enabled') || error.message.includes('Unsupported provider')) {
+          throw new Error('Email registration is not currently enabled for this platform. Please contact support.');
+        }
+        throw error;
+      }
 
       // Update profile with additional data if user was created
       // This is now redundant as handle_new_user trigger handles metadata, 
@@ -201,7 +211,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         },
       });
 
-      if (error) throw error;
+      if (error) {
+        // Provide more helpful error for disabled providers
+        if (error.message.includes('provider is not enabled') || error.message.includes('Unsupported provider')) {
+          throw new Error('Google Sign-In is not currently enabled for this platform. Please use Email/Password to sign in instead.');
+        }
+        throw error;
+      }
       if (data?.url) {
         window.location.assign(data.url);
       }

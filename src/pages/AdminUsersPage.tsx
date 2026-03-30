@@ -1,16 +1,14 @@
-import { Ban, Edit, Search, Shield, Download, UserPlus, Trash2, Eye, Filter, CheckCircle, XCircle, FileText, PlusCircle, Trash } from 'lucide-react';
+import { Edit, Search, Download, UserPlus, Trash2, Filter, FileText, Trash } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 import {
   AlertDialog,
@@ -35,17 +33,13 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { supabase } from '@/db/supabase';
 import { exportUsersToExcel } from '@/lib/excel-export';
-import { useAuth } from '@/contexts/AuthContext';
-import type { Profile } from '@/types';
 
 export default function AdminUsersPage() {
-  const { profile: adminProfile } = useAuth();
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const kycFilter = searchParams.get('kyc') || 'all';
   
   const [users, setUsers] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedUser, setSelectedUser] = useState<any | null>(null);
   const [editDialogOpen, setEditDialogOpen] = useState(false);
@@ -261,7 +255,7 @@ export default function AdminUsersPage() {
     }
 
     try {
-      const { data, error } = await supabase.functions.invoke('create-user', {
+      const { error } = await supabase.functions.invoke('create-user', {
         body: newUser
       });
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Camera, Loader2, X, Upload } from 'lucide-react';
+import { Loader2, X, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { supabase } from '@/db/supabase';

@@ -1,4 +1,4 @@
-import { MessageSquare, Send, Search, Filter, Calendar, User } from 'lucide-react';
+import { Send, Search, Filter } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
