@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import IntersectObserver from '@/components/common/IntersectObserver';
 import { Toaster } from '@/components/ui/sonner';
 import { RouteGuard } from '@/components/common/RouteGuard';
@@ -74,6 +75,7 @@ const App: React.FC = () => {
       <RouteGuard>
         <AppContent />
       </RouteGuard>
+      <SpeedInsights />
     </Router>
   );
 };
