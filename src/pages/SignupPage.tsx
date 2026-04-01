@@ -19,7 +19,7 @@ import {
   validatePhone, 
   sanitizeInput,
   preventSQLInjection,
-  detectAttackPattern
+  detectAttackPattern   
 } from '@/lib/security';
 import { SEOHead } from '@/lib/seo';
 
@@ -240,7 +240,7 @@ export default function SignupPage() {
             <CardDescription className="text-center">
               {step === 'form' 
                 ? 'Join Gold X Usdt and start earning today'
-                : `Enter the 6-digit code sent to ${email}`
+                : ${email}`
               }
             </CardDescription>
             {step === 'form' && (
