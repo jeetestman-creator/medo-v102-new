@@ -240,7 +240,6 @@ export default function SignupPage() {
             <CardDescription className="text-center">
               {step === 'form' 
                 ? 'Join Gold X Usdt and start earning today'
-                : ${email}`
               }
             </CardDescription>
             {step === 'form' && (
